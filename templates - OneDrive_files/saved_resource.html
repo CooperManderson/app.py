@@ -1,0 +1,22 @@
+
+<!-- saved from url=(0012)about:srcdoc -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>{% extends 'layout.html' %}
+
+{% block mainBlock %}
+
+    <div class="row">
+        <div class="col">
+            {% for message in get_flashed_messages() %}
+                <div class="alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<h2>List of Students</h2>
+{% for student in names %}
+    <p><a href="https://stpauls4-my.sharepoint.com/personal/b_stansfield_stpauls_qld_edu_au/_layouts/15/student_details?studentid={{student[1]}}">{{ student[0] }}</a></p>
+{% endfor %}
+{% endblock %}</body></html>
